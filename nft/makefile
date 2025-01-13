@@ -7,4 +7,4 @@ build:
 
 # Deployment
 deploy:
-	@forge create Counter --private-key ${PRIVATE_KEY} --rpc-url ${RPC_URL}
+	@forge script script/GenesisNFT.s.sol --rpc-url ${RPC_URL} --private-key ${PRIVATE_KEY}
