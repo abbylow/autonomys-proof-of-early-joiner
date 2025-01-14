@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export function SiteHeader() {
   return (
@@ -7,7 +7,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2 font-bold">
           <span className="text-xl">Autonomys Genesis</span>
         </div>
-        <Button variant="outline">Connect</Button>
+        <ConnectButton />
       </div>
     </header>
   )
