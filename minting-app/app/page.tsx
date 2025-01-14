@@ -38,7 +38,6 @@ export default function Page() {
                 <ul>
                   <li>Proof of early network participation</li>
                   <li>One NFT per wallet address</li>
-                  <li>Available until January 31st, 2025</li>
                   <li>Zero minting cost (gas fees apply)</li>
                 </ul>
               </div>
