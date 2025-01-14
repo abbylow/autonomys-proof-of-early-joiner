@@ -1,8 +1,8 @@
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { SiteHeader } from "@/components/site-header"
+import MintBtn from "@/components/mint-btn"
 
 export default function Page() {
   return (
@@ -47,9 +47,7 @@ export default function Page() {
                 <p className="text-sm text-muted-foreground">
                   Minting ends on January 31st, 2025
                 </p>
-                <Button size="lg" className="w-full">
-                  Mint NFT
-                </Button>
+                <MintBtn />
               </div>
             </div>
           </div>
