@@ -48,27 +48,16 @@ export default function MintBtn() {
 
     const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({ hash })
 
-
-    if (supplyClaimedByUser) {
-        return (
-            <div className='flex flex-col gap-2'>
-                <Button size="lg" className="w-full" disabled={true}>
-                    Minted
-                </Button>
-            </div>
-        )
-    }
-
     return (
         <div className='flex flex-col gap-2'>
             <Button
                 size="lg"
                 className="w-full"
                 onClick={handleMint}
-                disabled={!address || isConfirmed || isPending || isConfirming}
+                disabled={!address || !!supplyClaimedByUser || isConfirmed || isPending || isConfirming}
             >
                 {(isPending || isConfirming) && <Loader2 className="animate-spin" />}
-                {isConfirmed ? "Minted" : ((isPending || isConfirming) ? "Minting" : "Mint NFT")}
+                {(isConfirmed || !!supplyClaimedByUser) ? "Minted" : ((isPending || isConfirming) ? "Minting" : "Mint NFT")}
             </Button>
 
             {hash && (
