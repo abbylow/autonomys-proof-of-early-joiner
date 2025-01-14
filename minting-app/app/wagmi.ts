@@ -1,6 +1,6 @@
 import { getDefaultConfig } from '@rainbow-me/rainbowkit';
 
-import { autoTaurus } from '@/const/taurusChain';
+import { autoTaurus } from '@/const/taurus-chain';
 
 export const config = getDefaultConfig({
   appName: 'Autonomys Genesis NFT',
