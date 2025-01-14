@@ -27,12 +27,12 @@ export default function Page() {
               </div>
               <p className="text-muted-foreground">Limited time exclusive NFT for early supporters</p>
             </div>
-            
+
             <div className="space-y-4">
               <div className="prose prose-sm dark:prose-invert">
                 <h3>About this NFT</h3>
                 <p>
-                  Be part of the Autonomys Network from the beginning. This exclusive Genesis NFT 
+                  Be part of the Autonomys Network from the beginning. This exclusive Genesis NFT
                   represents your early support and grants you special access to future network features.
                 </p>
                 <ul>
@@ -42,12 +42,7 @@ export default function Page() {
                 </ul>
               </div>
 
-              <div className="space-y-2">
-                <p className="text-sm text-muted-foreground">
-                  Minting ends on January 31st, 2025
-                </p>
-                <MintBtn />
-              </div>
+              <MintBtn />
             </div>
           </div>
         </div>
