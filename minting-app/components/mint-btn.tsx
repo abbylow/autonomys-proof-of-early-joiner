@@ -2,7 +2,7 @@
 
 import { ethers } from 'ethers';
 import { Loader2 } from "lucide-react"
-import { type BaseError, useAccount, useWaitForTransactionReceipt, useWriteContract } from 'wagmi';
+import { type BaseError, useAccount, useReadContract, useWaitForTransactionReceipt, useWriteContract } from 'wagmi';
 
 import { Button } from "@/components/ui/button"
 import { NFT_CONTRACT_ADDRESS } from '@/const/contracts';
@@ -10,6 +10,13 @@ import { ABI } from '@/const/abi';
 
 export default function MintBtn() {
     const { address } = useAccount()
+
+    const { data: supplyClaimedByUser } = useReadContract({
+        address: NFT_CONTRACT_ADDRESS,
+        abi: ABI,
+        functionName: 'getSupplyClaimedByWallet',
+        args: [address],
+    })
 
     const { data: hash, writeContract, isPending, error } = useWriteContract()
 
@@ -40,6 +47,17 @@ export default function MintBtn() {
     }
 
     const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({ hash })
+
+
+    if (supplyClaimedByUser) {
+        return (
+            <div className='flex flex-col gap-2'>
+                <Button size="lg" className="w-full" disabled={true}>
+                    Minted
+                </Button>
+            </div>
+        )
+    }
 
     return (
         <div className='flex flex-col gap-2'>

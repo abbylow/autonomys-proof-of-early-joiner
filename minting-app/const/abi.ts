@@ -1,6 +1,25 @@
 export const ABI = [
     {
         "type": "function",
+        "name": "getSupplyClaimedByWallet",
+        "inputs": [
+            {
+                "name": "_claimer",
+                "type": "address",
+                "internalType": "address"
+            }
+        ],
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256",
+                "internalType": "uint256"
+            }
+        ],
+        "stateMutability": "view"
+    },
+    {
+        "type": "function",
         "name": "claim",
         "inputs": [
             {
